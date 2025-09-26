@@ -2,13 +2,16 @@
 
 #include "ap_int.h"
 
-typedef int coef_t;
+//typedef int coef_t;
+typedef ap_int<4> coef_t;
 typedef ap_int<9> data_t;
 //typedef int data_t;
 
-typedef int acc_t;
+//typedef int acc_t;
 
-void fir(data_t *y, data_t x) {
+typedef ap_int<16> acc_t;
+
+void fir(acc_t *y, data_t x) {
 
 #pragma HLS INTERFACE axis port=x
 #pragma HLS INTERFACE axis port=y
